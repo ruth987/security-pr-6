@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../db/config');
 const { authenticateToken, authorizeRole } = require('../middleware/auth');
+const Logger = require('../services/logger');
+
 
 // Get all users
 router.get('/users', authenticateToken, authorizeRole(['admin']), async (req, res) => {

@@ -25,7 +25,6 @@ const requestLogger = async (req, res, next) => {
             req
         );
 
-        // Call the original end function
         originalEnd.apply(res, args);
     };
 
